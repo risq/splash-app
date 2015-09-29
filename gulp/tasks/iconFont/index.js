@@ -1,5 +1,5 @@
 var gulp             = require('gulp');
-var iconfont         = require('gulp-iconfont');
+// var iconfont         = require('gulp-iconfont');
 var config           = require('../../config').iconFont;
 var generateIconLess = require('./generateIconLess');
 var handleErrors     = require('../../util/handleErrors');
@@ -8,7 +8,7 @@ var handleErrors     = require('../../util/handleErrors');
 
 gulp.task('iconFont', function() {
   return gulp.src(config.src)
-    .pipe(iconfont(config.options))
+    // .pipe(iconfont(config.options))
     .on('glyphs', generateIconLess)
 
     // .on('error', handleErrors)

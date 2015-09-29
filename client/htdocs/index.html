@@ -4,26 +4,57 @@
   <head>
     <meta charset="utf-8"/>
 
-    <meta content="telephone=no" name="format-detection"/>
-    <meta content="no" name="msapplication-tap-highlight">
-
-    <meta
-      content="minimal-ui, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"
+    <metacontent="minimal-ui, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"
       name="viewport"/>
 
     <meta content="yes" name="apple-mobile-web-app-capable"/>
 
-    <title>Oz Frontend Starter</title>
-    <meta content="OZ Frontend Starter" name="description">
+    <title>Splash</title>
 
     <link href="vendor.css" rel="stylesheet" type="text/css"/>
     <link href="index.css" rel="stylesheet" type="text/css"/>
   </head>
 
-  <body id="main">
-    <div class="gamma"></div>
-    <div class="beta"></div>
+  <body>
+    <main>
 
+      <div class="gamma"></div>
+          <div class="beta"></div>
+
+      <!-- SPLASHSCREEN-->
+      <section class="splashscreen">
+        <p>Splash</p>
+      </section>
+
+      <!--INPUT CODE-->
+      <section>
+        <form>
+          <input type="text" placeholder="Code"></input>
+        </form>
+      </section>
+
+      <!-- PAGE TUTORIEL-->
+      <section class="tutoriel">
+        <div>TUTO</div>
+      </section>
+
+      <!--PAGE START-->
+      <section class="start">
+        <div class="btn-start"></div>
+      </section>
+
+      <!-- PART ACCELOROMETRE-->
+      <section>
+        <div class="arrows">
+          <div class="top"></div>
+          <div class="right"></div>
+          <div class="bottom"></div>
+          <div class="left"></div>
+        </div>
+      </section>
+
+    </main>
+    
     <script src="vendor.js" type="text/javascript"></script>
     <script src="index.js" type="text/javascript"></script>
     <script src="http://localhost:5000/socket.io/socket.io.js"></script>

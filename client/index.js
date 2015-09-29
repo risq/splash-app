@@ -1,22 +1,14 @@
 import $ from 'jquery';
 import debug from 'debug';
 
-import gyro from './scripts/gyro';
-import tpl from './templates/posts.hbs';
+import App from './scripts/app.js';
 
 const dbg = debug('splash:index');
 
-function onPostsLoaded(data) {
-  const content = tpl({
-    posts: data,
-  });
-
-  // $('#main').append(content);
+function onDocumentReady() {
+  dbg('document ready');
+  const app = new App();
+  dbg(app);
 }
 
-$(() => {
-  dbg('document ready');
-  gyro.init();
-  $.getJSON('/posts')
-    .then(onPostsLoaded);
-});
+$(onDocumentReady);

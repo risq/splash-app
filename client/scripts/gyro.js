@@ -1,5 +1,8 @@
 import debug from 'debug';
 import $ from 'jquery';
+
+import socket from './socket';
+
 const dbg = debug('splash:gyro');
 
 export default class Gyro {
@@ -15,5 +18,6 @@ export default class Gyro {
   deviceOrientationHandler(e) {
     $('.gamma').text(e.gamma);
     $('.beta').text(e.beta);
+    socket.emitOrientation(Math.round(e.gamma), Math.round(e.beta));
   }
 }

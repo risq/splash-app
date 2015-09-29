@@ -9,7 +9,7 @@ export default new class Socket {
   }
 
   init() {
-    this.socket = window.io('localhost:5000');
+    this.socket = window.io('192.168.31.92:5000');
 
     return new Bluebird((resolve) => {
       dbg('Socket successfully connected');
@@ -19,7 +19,8 @@ export default new class Socket {
   }
 
   emitOrientation(gamma, beta) {
-    if (this.socket) {
+    if (this.state === 'connected') {
+      dbg('Emitting orientation', gamma, beta);
       this.socket.emit('orientation', {
         gamma,
         beta,

@@ -9,12 +9,24 @@ server.listen(app.get('port'));
 
 app.use(express.static(__dirname + '/public'));
 
+var arduinoSocket;
+
 io.on('connection', function (socket) {
   socket.emit('connected');
-  socket.on('orientation', function (data) {
-    console.log('orientation:', data);
-    socket.broadcast.emit('orientation', data);
-  });
+  socket.on('orientation', onOrientationData);
+  socket.on('arduino', onArduinoRegister);
 });
+
+function onOrientationData (data) {
+  console.log('onOrientationData', data);
+  if (arduinoSocket) {
+    arduinoSocket.emit('orientation', data);
+  }
+}
+
+function onArduinoRegister (data) {
+  console.log('Arduino registered');
+  arduinoSocket = this;
+}
 
 module.exports = app;

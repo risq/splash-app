@@ -14,5 +14,11 @@ export default class App {
   initApp() {
     dbg('init app');
     this.gyro = new Gyro();
+    this.initUi();
+  }
+
+ // ANIMATION INTERFACE UTILISATEUR
+  initUi() {
+    //TODO
   }
 }

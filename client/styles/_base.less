@@ -19,6 +19,7 @@ body, html { font-size: 100%; padding: 0; margin: 0;  height: 100%;}
 
 .relative{
   position:relative;
+  overflow: hidden;
   width: 100%;
 	height: 100%;
 }
@@ -26,26 +27,4 @@ body, html { font-size: 100%; padding: 0; margin: 0;  height: 100%;}
 body {
   font-family: sans-serif;
   background-color: white;
-}
-
-section{
-  width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-  visibility: visible;
-	//overflow: hidden;
-  backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
-  transform-style: preserve-3d;
-  .current{
-    visibility: visible;
-	z-index: 1;
-  }
-}
-
-h1{
-  font-family: 'besom_2regular';
-  font-size: 150px;
 }

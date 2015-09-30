@@ -10,7 +10,6 @@ export default class Ui {
     this.$els = {
       paintDropButton: $('.paint-drop-button'),
     };
-
     this.initEvents();
   }
 

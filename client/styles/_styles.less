@@ -60,3 +60,56 @@ section{
     }
   }
 }
+
+
+section{
+  &.code{
+    background:url('images/back.jpg') no-repeat center;
+    background-size:130%;
+  }
+}
+form{
+  padding-top: 10%;
+  font-family: 'Titillium Web', sans-serif;
+  input{
+    width: 70%;
+    font-size:80px;
+    margin:120px auto;
+    background: none;
+    background-color:rgba(255,255,255,0.8);
+    border:2px solid white;
+    text-align: center;
+    padding:10px;
+    &[type="text"]{
+      color:@color3;
+      padding: 40px 40px;
+    }
+    &[type="button"]{
+      border-radius:50%;
+      width: 300px;
+      height: 300px;
+      color:@color3;
+    }
+  }
+}
+
+.start{
+  background:url('images/back_start.jpg') no-repeat center;
+  background-size:cover;
+  padding-top: 80%;
+  a.btn-start{
+    font-size:80px;
+    border-radius:50%;
+    display:block;
+    line-height: 300px;
+    vertical-align: middle;
+    width: 300px;
+    height: 300px;
+    color:@color6;
+    margin: auto;
+    text-decoration: none;
+    background-color:rgba(255,255,255,1);
+    border:2px solid white;
+    text-align: center;
+  }
+}

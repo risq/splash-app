@@ -27,4 +27,18 @@ export default new class Socket {
       });
     }
   }
+
+  startPaintDrop() {
+    if (this.state === 'connected') {
+      dbg('Emitting paint drop start');
+      this.socket.emit('paint start');
+    }
+  }
+
+  stopPaintDrop() {
+    if (this.state === 'connected') {
+      dbg('Emitting paint drop stop');
+      this.socket.emit('paint stop');
+    }
+  }
 };

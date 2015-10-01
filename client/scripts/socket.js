@@ -13,7 +13,7 @@ export default new class Socket {
 
     return new Bluebird((resolve) => {
       dbg('Socket successfully connected');
-      this.state = 'connected';
+      this.state = 'connected'; // TODO
       this.socket.once('connected', resolve);
     });
   }

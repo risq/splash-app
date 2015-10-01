@@ -38,5 +38,4 @@ module.exports = function(server) {
     console.log('Arduino registered');
     arduinoSocket = this;
   }
-
 }

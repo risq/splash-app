@@ -25,7 +25,6 @@ export default class Ui extends events.EventEmitter {
   }
 
   initEvents() {
-    dbg('els', this.$els);
     this.$els.paintDropButton.on('mousedown touchstart', this.onPaintDropButtonDown.bind(this));
     this.$els.paintDropButton.on('mouseup touchend', this.onPaintDropButtonUp.bind(this));
     this.$els.paintChoiceButton.on('click', this.onPaintChoiceButtonClick.bind(this));

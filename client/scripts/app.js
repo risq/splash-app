@@ -2,6 +2,7 @@ import debug from 'debug';
 
 import socket from './socket';
 import Gyro from './gyro';
+import Webcam from './webcam';
 import Ui from './ui';
 
 const dbg = debug('splash:app');
@@ -27,6 +28,7 @@ export default class App {
     dbg('Init gyro mode');
     this.ui.displayGyroScreen();
     this.gyro = new Gyro();
+    this.webcam = new Webcam();
   }
 
   initPaintMode() {

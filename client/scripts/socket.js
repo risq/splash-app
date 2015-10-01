@@ -17,11 +17,14 @@ export default new class Socket {
         this.socket = io(config.socketServerUrl);
 
         return new Bluebird((resolve) => {
-          dbg('Socket successfully connected');
-          this.state = 'connected'; // TODO
           this.socket.once('connected', resolve);
-        });
+        }).then(this.onSocketConnected.bind(this));
       });
+  }
+
+  onSocketConnected() {
+    dbg('Socket successfully connected');
+    this.state = 'connected';
   }
 
   emitOrientation(gamma, beta) {
@@ -45,6 +48,13 @@ export default new class Socket {
     if (this.state === 'connected') {
       dbg('Emitting paint drop stop');
       this.socket.emit('paint stop');
+    }
+  }
+
+  requestVideoStream(id) {
+    if (this.state === 'connected') {
+      dbg('Requesting video stream', id);
+      this.socket.emit('request stream', id);
     }
   }
 };

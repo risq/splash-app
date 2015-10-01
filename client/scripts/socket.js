@@ -1,5 +1,6 @@
 import debug from 'debug';
 import Bluebird from 'bluebird';
+import io from 'socket.io-client';
 
 const dbg = debug('splash:socket');
 
@@ -9,7 +10,7 @@ export default new class Socket {
   }
 
   init() {
-    this.socket = window.io('192.168.31.92:5000');
+    this.socket = io('http://192.168.31.92:5000');
 
     return new Bluebird((resolve) => {
       dbg('Socket successfully connected');

@@ -19,10 +19,10 @@ export default class Ui extends events.EventEmitter {
         choice: $('.choicescreen'),
         paint: $('.paintscreen'),
         gyro: $('.gyroscreen'),
-      }
+      },
     };
     this.initEvents();
-}
+  }
 
   initEvents() {
     dbg('els', this.$els);

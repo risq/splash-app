@@ -18,8 +18,8 @@ export default class Webcam {
 
   initConnection() {
     this.connection = new Peer(this.id, {
-      host: '192.168.31.92',
-      port: 5000,
+      host: socket.config.host,
+      port: socket.config.port,
       path: '/peer',
       config: {
         iceServers: [{

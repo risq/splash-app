@@ -8,13 +8,15 @@ const dbg = debug('splash:socket');
 export default new class Socket {
   constructor() {
     this.state = 'waiting';
+    this.config = {};
   }
 
   init() {
     return Bluebird.resolve($.getJSON('/config'))
       .then((config) => {
         dbg('Config successfully loaded');
-        this.socket = io(config.socketServerUrl);
+        this.config = config;
+        this.socket = io(`http://${this.config.host}:${this.config.port}`);
 
         return new Bluebird((resolve) => {
           this.socket.once('connected', resolve);

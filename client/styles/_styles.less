@@ -116,6 +116,10 @@ section{
       text-align: center;
     }
   }
+
+  &.gyroscreen{
+    background-color: #000;
+  }
 }
 
 @keyframes animateColor {
@@ -128,5 +132,8 @@ section{
 }
 
 .video {
-  transform: rotateZ(90deg);
+  transform: rotateZ(90deg) scale(1.5);
+  position: fixed;
+  top: 0;
+  left: 0;
 }

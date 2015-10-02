@@ -10,7 +10,11 @@ export default class Webcam {
   constructor() {
     dbg('Init webcam');
     this.id = Math.round(Math.random() * 1000);
-    this.video = $('video')[0];
+    this.$video = $('video');
+    this.$video.css({
+      width: $(window).width(),
+      height: $(window).height(),
+    });
     this.initConnection();
   }
 
@@ -48,8 +52,8 @@ export default class Webcam {
   }
 
   receiveStream(stream) {
-    dbg('reveive stream', stream, this.video);
-    this.video.src = window.URL.createObjectURL(stream);
+    dbg('reveive stream', stream, this.$video);
+    this.$video[0].src = window.URL.createObjectURL(stream);
   }
 
   answerCall(stream) {

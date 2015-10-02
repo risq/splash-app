@@ -33,6 +33,7 @@ export default class Ui extends events.EventEmitter {
     this.$els.paintDropButton.on('mouseup touchend', this.onPaintDropButtonUp.bind(this));
     this.$els.paintChoiceButton.on('click', this.onPaintChoiceButtonClick.bind(this));
     this.$els.gyroChoiceButton.on('click', this.onGyroChoiceButtonClick.bind(this));
+    this.$els.screenVideoButton.on('click', this.onScreenVideoButtonClick.bind(this));
   }
 
   animationSplashscreen() {
@@ -79,6 +80,11 @@ export default class Ui extends events.EventEmitter {
   onGyroChoiceButtonClick(e) {
     e.preventDefault();
     this.emit('choiceGyro');
+  }
+
+  onScreenVideoButtonClick(e){
+    e.preventDefault();
+    this.emit('getScreenShot');
   }
 
 }

@@ -66,7 +66,18 @@ export default class Webcam {
     this.peerCall.answer(stream);
   }
 
+  screenShotVideo() {
+    const canvas = document.createElement('canvas');
+    canvas.width = this.$video.width();
+    canvas.height = this.$video.height();
+
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    dbg(canvas.toDataURL());
+  }
+
   onError(err) {
     dbg('Error', err);
   }
+
 }

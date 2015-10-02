@@ -23,6 +23,7 @@ export default class App {
 
     this.ui.on('choiceGyro', this.initGyroMode.bind(this));
     this.ui.on('choicePaint', this.initPaintMode.bind(this));
+    this.ui.on('getScreenShot', this.initGetScreenShot.bind(this));
   }
 
   initGyroMode() {
@@ -35,6 +36,11 @@ export default class App {
   initPaintMode() {
     dbg('Init paint mode');
     this.ui.displayPaintScreen();
+  }
+
+  initGetScreenShot() {
+    dbg('Get Screen Shot');
+    this.webcam.screenShotVideo();
   }
 
 }

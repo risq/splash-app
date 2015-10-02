@@ -13,6 +13,10 @@ export default class Ui extends events.EventEmitter {
       paintDropButton: $('.paint-drop-button'),
       paintChoiceButton: $('.paint-choice-button'),
       gyroChoiceButton: $('.gyro-choice-button'),
+      animation: {
+        colors: $('.color'),
+        h1: $('h1'),
+      },
       screens: {
         all: $('section'),
         splash: $('.splashscreen'),
@@ -22,6 +26,7 @@ export default class Ui extends events.EventEmitter {
       },
     };
     this.initEvents();
+    this.animationSplashscreen();
   }
 
   initEvents() {
@@ -29,6 +34,11 @@ export default class Ui extends events.EventEmitter {
     this.$els.paintDropButton.on('mouseup touchend', this.onPaintDropButtonUp.bind(this));
     this.$els.paintChoiceButton.on('click', this.onPaintChoiceButtonClick.bind(this));
     this.$els.gyroChoiceButton.on('click', this.onGyroChoiceButtonClick.bind(this));
+  }
+
+  animationSplashscreen() {
+    this.$els.animation.colors.addClass('animated');
+    this.$els.animation.h1.addClass('animated');
   }
 
   displayChoiceScreen() {

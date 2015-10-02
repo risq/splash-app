@@ -26,7 +26,6 @@ export default class Ui extends events.EventEmitter {
       },
     };
     this.initEvents();
-    this.animationSplashscreen();
   }
 
   initEvents() {
@@ -37,6 +36,7 @@ export default class Ui extends events.EventEmitter {
   }
 
   animationSplashscreen() {
+    dbg('animationSplashscreen');
     this.$els.animation.colors.addClass('animated');
     this.$els.animation.h1.addClass('animated');
   }

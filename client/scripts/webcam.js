@@ -11,11 +11,9 @@ export default class Webcam {
     dbg('Init webcam');
     this.id = Math.round(Math.random() * 1000);
     this.$video = $('video');
-    this.$video.css({
-      width: $(window).width(),
-      height: $(window).height(),
-    });
+    this.updateVideoSize();
     this.initConnection();
+    $(window).on('resize', this.updateVideoSize.bind(this));
   }
 
   initConnection() {
@@ -37,6 +35,13 @@ export default class Webcam {
 
     this.connection.on('open', this.onPeerReady.bind(this));
     this.connection.on('call', this.receiveCall.bind(this));
+  }
+
+  updateVideoSize() {
+    this.$video.css({
+      width: $(window).width(),
+      height: $(window).height(),
+    });
   }
 
   onPeerReady() {

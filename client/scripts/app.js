@@ -11,9 +11,8 @@ export default class App {
   constructor() {
     this.ui = new Ui();
     socket.init()
-
-      // .delay(3000)
-      // .then(this.initChoiceScreen.bind(this));
+      .delay(3000)
+      .then(this.initChoiceScreen.bind(this));
   }
 
   initChoiceScreen() {

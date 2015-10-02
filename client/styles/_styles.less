@@ -7,6 +7,13 @@
 @color5:#E91E63;
 @color6:#FF5722;
 
+// @color1:rgba(0,0,0,0.7);
+// @color2:rgba(0,0,0,0.7);
+// @color3:rgba(0,0,0,0.7);
+// @color4:rgba(0,0,0,0.7);
+// @color5:rgba(0,0,0,0.7);
+// @color6:rgba(0,0,0,0.7);
+
 section{
   width: 100%;
 	height: 100%;
@@ -45,43 +52,48 @@ section{
     h1{
       vertical-align: middle;
       display: block;
-      //mix-blend-mode: multiply;
+      mix-blend-mode: color-burn;
       margin-top: 10px;
+
       &:after{
       content: '_';
       display: block;
-      color: @color3;
+      color: rbga(0,0,0,0.1);
       }
       .color{
-        animation: animateColor 1s ease;//cubic-bezier(0.21, 0.57, 0.47, 1.15)
-        transform:center;
+        transition: transform 0.8s ease-in-out, opacity 1s ease-in-out;
         display: inline-block;
-        transform: scale(150);
-        opacity:1;
+        transform: scale3d(9,9,1);
+        opacity:0;
+        color:#444!important;
+        &.animated{
+          transform: scale3d(1,1,1);
+          opacity:1;
+        }
       }
       .color1{
         color:@color1;
-        animation-delay: 0s;
+        transition-delay: 0s;
       }
       .color2{
         color:@color2;
-        animation-delay: 0.3s;
+        transition-delay: 0.6s;
       }
       .color3{
         color:@color3;
-        animation-delay: 0.6s;
+        transition-delay: 0.12s;
       }
       .color4{
         color:@color4;
-        animation-delay: 0.9s;
+        transition-delay: 0.18s;
       }
       .color5{
         color:@color5;
-        animation-delay: 0.12s;
+        transition-delay: 0.24s;
       }
       .color6{
         color:@color6;
-        animation-delay: 0.15s;
+        transition-delay: 0.30s;
       }
     }
   }

@@ -13,6 +13,7 @@ export default class Ui extends events.EventEmitter {
       paintDropButton: $('.paint-drop-button'),
       paintChoiceButton: $('.paint-choice-button'),
       gyroChoiceButton: $('.gyro-choice-button'),
+      screenVideoButton: $('.screen-video-button'),
       animation: {
         colors: $('.color'),
         h1: $('h1'),
@@ -64,12 +65,18 @@ export default class Ui extends events.EventEmitter {
     e.preventDefault();
     dbg('Paint drop button down');
     socket.startPaintDrop();
+
+    // Simulate active state on mobile
+    this.$els.paintDropButton.addClass('active');
   }
 
   onPaintDropButtonUp(e) {
     e.preventDefault();
     dbg('Paint drop button up');
     socket.stopPaintDrop();
+
+    // Simulate active state on mobile
+    this.$els.paintDropButton.removeClass('active');
   }
 
   onPaintChoiceButtonClick(e) {

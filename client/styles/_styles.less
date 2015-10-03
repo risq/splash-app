@@ -109,15 +109,55 @@ section{
   &.paintscreen{
     background:url('images/back_start.jpg') no-repeat center;
     background-size:cover;
+
     a.paint-drop-button{
       height: 200px;
       width: 200px;
       border-radius:50%;
+      border: none;
       margin-top: 10px;
       vertical-align: middle;
       color:@color5;
       padding: 51px;
       text-align: center;
+      position: relative;
+      transition: all 1s ease-in-out;
+      animation: bounceButton 6s ease-in-out infinite;
+
+      &:active, &.active {
+        background-color: lighten(@color5, 40%);
+        animation: bounceButton 1.5s ease-in-out infinite;
+        .circle {
+          animation: bounceSmall 1.5s ease-in-out infinite;
+          &-thin {
+            animation: bounce 3s ease-in-out infinite;
+          }
+          &-xthin {
+            animation: bounceBig 3s ease-in-out 1.5s infinite;
+          }
+        }
+      }
+
+      .circle {
+        display: block;
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        top: 0;
+        left: 0;
+        border-radius:50%;
+        opacity: 0;
+        border: 6px solid #fff;
+
+        &-thin {
+          border: 3px solid #fff;
+        }
+
+        &-xthin {
+          border: 1px solid #fff;
+        }
+      }
+
     }
   }
 }
@@ -128,6 +168,60 @@ section{
   }
   100%{
     transform:scale(1);
+  }
+}
+
+@keyframes bounceSmall {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bounceBig {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.6);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bounceButton {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 

@@ -68,16 +68,21 @@ export default class Webcam {
 
   screenShotVideo() {
     const canvas = document.createElement('canvas');
-    canvas.width = this.$video.width();
-    canvas.height = this.$video.height();
+    canvas.width = this.$video.height();
+    canvas.height = this.$video.width();
 
     const ctx = canvas.getContext('2d');
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-    dbg(canvas.toDataURL());
+    ctx.drawImage(this.$video[0], 0, 0, 736, 401);
+    const img = canvas.toDataURL();
+
+    // window.location.href = img;
+    const anchor = document.createElement('a');
+    anchor.setAttribute('download', 'myFilename.png');
+    anchor.setAttribute('href', img);
+    anchor.click();
   }
 
   onError(err) {
     dbg('Error', err);
   }
-
 }

@@ -13,7 +13,7 @@ export default class Ui extends events.EventEmitter {
       paintDropButton: $('.paint-drop-button'),
       paintChoiceButton: $('.paint-choice-button'),
       gyroChoiceButton: $('.gyro-choice-button'),
-      screenVideoButton: $('.screen-video-button'),
+      screenshotButton: $('.screenshot-button'),
       animation: {
         colors: $('.color'),
         h1: $('h1'),
@@ -35,7 +35,7 @@ export default class Ui extends events.EventEmitter {
     this.$els.paintDropButton.on('mouseup touchend', this.onPaintDropButtonUp.bind(this));
     this.$els.paintChoiceButton.on('click', this.onPaintChoiceButtonClick.bind(this));
     this.$els.gyroChoiceButton.on('click', this.onGyroChoiceButtonClick.bind(this));
-    this.$els.screenVideoButton.on('click', this.onScreenVideoButtonClick.bind(this));
+    this.$els.screenshotButton.on('click', this.onScreenVideoButtonClick.bind(this));
   }
 
   animationSplashscreen() {
@@ -56,7 +56,7 @@ export default class Ui extends events.EventEmitter {
     this.$els.screens.gyro.addClass('current');
     setTimeout(() => {
       this.$els.animation.pVideoExplain.addClass('hide');
-    }, 5000);
+    }, 8000);
   }
 
   displayPaintScreen() {

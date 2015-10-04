@@ -19,7 +19,7 @@ section{
   transform: translate3d(100%, 0, 0);
   transform-style: preserve-3d;
   transition: all 0.3s ease-in-out;
-  padding-top:100px;
+
   &.current{
 	  z-index: 1;
     opacity: 1;
@@ -51,7 +51,7 @@ section{
       vertical-align: middle;
       display: block;
       mix-blend-mode: color-burn;
-      margin-top: 75px;
+      // margin-top: 75px;
       &:after{
       content: '';
       background: url(images/logo-french-tech.png) center no-repeat;
@@ -112,7 +112,8 @@ section{
   }
 
   &.gyroscreen{
-    background-color: green;
+    background-color: #000;
+
     a.screenshot-button{
       position: absolute;
       bottom:20px;
@@ -148,6 +149,7 @@ section{
   }
 
   &.paintscreen{
+    padding-top: 38px;
     background:url('images/back_start.jpg') no-repeat center;
     background-size:cover;
     a.paint-drop-button{
@@ -272,4 +274,22 @@ section{
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.center-vertical {
+  display: table;
+  width: 100%;
+  height: 100%;
+
+  &-inner {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.infos {
+  z-index: 1000;
+  position: absolute;
+  top: 50%;
+  margin-top: -50%;
 }

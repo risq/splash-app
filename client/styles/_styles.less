@@ -19,16 +19,21 @@ section{
   transform: translate3d(100%, 0, 0);
   transform-style: preserve-3d;
   transition: all 0.3s ease-in-out;
-  padding-top:35%;
+  padding-top:100px;
   &.current{
 	  z-index: 1;
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
+  p{
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+  }
   a{
       display: block;
       font-size:50px;
-      margin:0 auto 60px auto;
+      margin:15px auto 15px auto;
       text-transform: uppercase;
       text-decoration: none;
       padding:25px 15px;
@@ -41,16 +46,20 @@ section{
     font-family: 'besom_2regular';
     font-size: 120px;
     background:url(images/back_splashscreen.jpg) center no-repeat;
-    background-size: 100%;
+    background-size: cover;
     h1{
       vertical-align: middle;
       display: block;
       mix-blend-mode: color-burn;
-      margin-top: 10px;
+      margin-top: 75px;
       &:after{
-      content: '_';
+      content: '';
+      background: url(images/logo-french-tech.png) center no-repeat;
+      background-size: contain;
       display: block;
-      color: #777;
+      height: 200px;
+      width: 200px;
+      margin-left: 25%;
       transform: scale(0);
       transform-origin: center;
       transition-delay: 0.36s;
@@ -99,33 +108,66 @@ section{
 
   &.choicescreen{
     background:url('images/back.jpg') no-repeat center;
-    background-size:100%;
+    background-size:cover;
   }
 
   &.gyroscreen{
-    background-color: #000;
+    background-color: green;
+    a.screenshot-button{
+      position: absolute;
+      bottom:20px;
+      left:50%;
+      transform: translateX(-50%);
+      height: 40px;
+      width: 120px;
+      font-size: 20px;
+      padding: 0;
+      margin: 0;
+      line-height: 40px;
+      text-align: center;
+      color:@color4;
+    }
+    p{
+      transition: opacity 0.75s ease;
+      opacity: 1;
+      span{
+        text-align: center;
+        height: 100px;
+        width: 100px;
+        display: block;
+        margin: 50px auto;
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+      &.hide{
+        opacity: 0;
+      }
+    }
   }
 
   &.paintscreen{
     background:url('images/back_start.jpg') no-repeat center;
     background-size:cover;
-
     a.paint-drop-button{
+      position: absolute;
       height: 200px;
       width: 200px;
+      left:25%;
+      bottom:25%;
       border-radius:50%;
       border: none;
-      margin-top: 10px;
-      vertical-align: middle;
+      line-height: 200px;
+      margin:0;
+      padding: 0;
       color:@color5;
-      padding: 51px;
       text-align: center;
-      position: relative;
       transition: all 1s ease-in-out;
       animation: bounceButton 6s ease-in-out infinite;
 
       &:active, &.active {
-        background-color: lighten(@color5, 40%);
+        background-color: lighten(@color2, 40%);
         animation: bounceButton 1.5s ease-in-out infinite;
         .circle {
           animation: bounceSmall 1.5s ease-in-out infinite;

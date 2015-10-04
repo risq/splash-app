@@ -17,6 +17,7 @@ export default class Ui extends events.EventEmitter {
       animation: {
         colors: $('.color'),
         h1: $('h1'),
+        pVideoExplain: $('.gyroscreen p'),
       },
       screens: {
         all: $('section'),
@@ -53,6 +54,9 @@ export default class Ui extends events.EventEmitter {
     dbg('displayGyroScreen');
     this.$els.screens.all.removeClass('current');
     this.$els.screens.gyro.addClass('current');
+    setTimeout(() => {
+      this.$els.animation.pVideoExplain.addClass('hide');
+    }, 5000);
   }
 
   displayPaintScreen() {
@@ -89,7 +93,7 @@ export default class Ui extends events.EventEmitter {
     this.emit('choiceGyro');
   }
 
-  onScreenVideoButtonClick(e){
+  onScreenVideoButtonClick(e) {
     e.preventDefault();
     this.emit('getScreenShot');
   }
